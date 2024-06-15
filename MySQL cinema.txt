@@ -1,0 +1,45 @@
+/*create database cinema;
+use cinema;
+
+CREATE TABLE filmes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    genero VARCHAR(255) NOT NULL,
+    duracao INT NOT NULL
+);
+
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    telefone VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE sessoes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    filme_id INT NOT NULL,
+    data DATE NOT NULL,
+    horario TIME NOT NULL,
+    FOREIGN KEY (filme_id) REFERENCES filmes(id)
+);
+
+CREATE TABLE ingressos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sessao_id INT NOT NULL,
+    cliente_id INT NOT NULL,
+    FOREIGN KEY (sessao_id) REFERENCES sessoes(id),
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+);*/
+
+-- Inserir filmes
+INSERT INTO filmes (titulo, genero, duracao) VALUES ('Filme 1', 'Ação', 120);
+INSERT INTO filmes (titulo, genero, duracao) VALUES ('Filme 2', 'Comédia', 90);
+
+-- Inserir sessões
+INSERT INTO sessoes (filme_id, data, horario) VALUES (1, '2024-06-01', '18:00:00');
+INSERT INTO sessoes (filme_id, data, horario) VALUES (2, '2024-06-02', '20:00:00');
+
+-- Inserir clientes
+INSERT INTO clientes (nome, telefone, email) VALUES ('Cliente 1', '123456789', 'cliente1@example.com');
+INSERT INTO clientes (nome, telefone, email) VALUES ('Cliente 2', '987654321', 'cliente2@example.com');
+
